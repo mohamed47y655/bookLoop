@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 30% 6%;
+    --foreground: 210 40% 95%;
+
+    --card: 260 25% 10%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 260 25% 10%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 188 100% 50%;
+    --primary-foreground: 260 30% 6%;
+
+    --secondary: 270 60% 50%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 260 20% 15%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 270 80% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 20% 18%;
+    --input: 260 20% 18%;
+    --ring: 188 100% 50%;
+
+    --radius: 0.75rem;
+
+    --glow-cyan: 188 100% 50%;
+    --glow-purple: 270 80% 60%;
+    --surface-glass: 260 25% 12%;
+
+    --sidebar-background: 260 30% 8%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 188 100% 50%;
+    --sidebar-primary-foreground: 260 30% 6%;
+    --sidebar-accent: 270 60% 50%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 260 20% 18%;
+    --sidebar-ring: 188 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/40 backdrop-blur-xl border border-border/50;
+  }
+  .glass-strong {
+    @apply bg-card/60 backdrop-blur-2xl border border-border/60;
+  }
+  .glow-border {
+    box-shadow: 0 0 15px -3px hsl(var(--primary) / 0.3),
+                0 0 6px -2px hsl(var(--primary) / 0.2),
+                inset 0 0 10px -5px hsl(var(--primary) / 0.1);
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+  .glow-border-purple {
+    box-shadow: 0 0 15px -3px hsl(var(--accent) / 0.3),
+                0 0 6px -2px hsl(var(--accent) / 0.2),
+                inset 0 0 10px -5px hsl(var(--accent) / 0.1);
+    border: 1px solid hsl(var(--accent) / 0.3);
+  }
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5),
+                 0 0 40px hsl(var(--primary) / 0.2);
+  }
+  .neon-line {
+    background: linear-gradient(90deg, 
+      transparent, 
+      hsl(var(--primary) / 0.6), 
+      hsl(var(--accent) / 0.6), 
+      transparent
+    );
+    height: 1px;
+  }
+}
